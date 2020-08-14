@@ -12,22 +12,22 @@ class AuthController extends Controller
 {
     function register(Request $request){
         $name = $request->input('name');
-        $email = $request->input('email');
+        $username = $request->input('username');
         $password = $request->input('password');
         $user = new User();
         $user->name = $name;
-        $user->email = $email;
+        $user->username = $username;
         $user->password = Hash::make($password);
         $user->save();
         $responseData = array("data"=>null);
         return response()->json($responseData, 200);
     }
     function login(Request $request){
-        $email = $request->input('email');
+        $username = $request->input('username');
         $password = $request->input('password');
         $key = "example_key";
 
-        if(Auth::attempt(['email' => $email, 'password' => $password])){
+        if(Auth::attempt(['username' => $username, 'password' => $password])){
             $userId = Auth::user()->id;
             $value = array(
                 "user_id"=>$userId
