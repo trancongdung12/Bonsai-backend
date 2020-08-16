@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/','Admin\DashboardController@index');
 Route::get('admin/category','Admin\CategoryController@create');
 Route::get('admin/category/{id}/edit','Admin\CategoryController@edit');
 Route::post('admin/category','Admin\CategoryController@store');

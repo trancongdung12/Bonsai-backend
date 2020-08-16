@@ -15,7 +15,7 @@ class OrderController extends Controller
         $userId = $decoded->user_id;
         $name = $request->name;
         $phone = $request->phone;
-        $email = $request->email;
+        $total = $request->total;
         $address = $request->address;
         $cart = $request->cart;
 
@@ -23,8 +23,8 @@ class OrderController extends Controller
         $Orders->user_id = $userId;
         $Orders->name = $name;
         $Orders->phone = $phone;
-        $Orders->email = $email;
         $Orders->address = $address;
+        $Orders->total = $total;
         $Orders->cart = $cart;
         $Orders->save();
         $responseData = array("data"=>null);

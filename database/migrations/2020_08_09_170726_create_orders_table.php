@@ -19,8 +19,8 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->string('phone');
-            $table->string('email');
             $table->string('address');
+            $table->string('total');
             $table->longText('cart');
             $table->timestamps();
         });

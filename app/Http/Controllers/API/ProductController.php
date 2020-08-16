@@ -22,6 +22,13 @@ class ProductController extends Controller
         }
         return $category;
     }
+    function newProduct(){
+        $newproduct = Product::orderBy('id','DESC')->take(4)->get();
+        foreach($newproduct as $item){
+            $item->category;
+        }
+        return $newproduct;
+    }
     function detail($id){
         $products = Product::find($id);
         return $products;

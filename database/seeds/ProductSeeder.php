@@ -12,7 +12,7 @@ class ProductSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i=0; $i<4; $i++){
+        for($i=0; $i<5; $i++){
             DB::table('products')->insert([
                 "name"=>"CÂY ".$i,
                 "category_id"=>1,
@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
                 "description"=>$faker->text,
                 ]);
         }
-        for($i=0; $i<4; $i++){
+        for($i=0; $i<5; $i++){
             DB::table('products')->insert([
                 "name"=>"CÂY ".$i,
                 "category_id"=>2,
@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
                 "description"=>$faker->text,
                 ]);
         }
-        for($i=0; $i<4; $i++){
+        for($i=0; $i<5; $i++){
             DB::table('products')->insert([
                 "name"=>"CÂY ".$i,
                 "category_id"=>3,
